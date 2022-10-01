@@ -7,8 +7,22 @@ import { listProducts } from "../actions/productActions";
 import Message from "../components/message";
 import Loader from "../components/loader";
 import Paginate from "../components/Paginate";
-import ProductCarousel from "../components/ProductCarousel";
+
 import Meta from "../components/Meta";
+
+import Categories from "../components/Categories";
+
+import TopCate from "../components/Slider/TopCate";
+//home is for homepage slider
+import Home from "../components/Slider2/Home";
+import Slider from "../components/Slider";
+import CarouselContainer from "../components/CarouselContainer";
+import DemoCarousel from "../components/DemoCarousel";
+
+
+
+
+
 const HomeScreen = () => {
   const match = useParams();
   const keyword = match.keyword;
@@ -19,39 +33,59 @@ const HomeScreen = () => {
   useEffect(() => {
     dispatch(listProducts(keyword, pageNumber));
   }, [dispatch, keyword, pageNumber]);
+
+
   return (
     <>
       <Meta />
+      {console.log(keyword)}
       {!keyword ? (
-        <ProductCarousel />
+        <>
+          {/* <DemoCarousel></DemoCarousel> */}
+          <Slider></Slider>
+          <Categories></Categories>
+        </>
+
+
       ) : (
         <Link to="/" className="btn btn-light">
           Go Back
         </Link>
-      )}
+      )
+      }
+
+
+
+
       <h1>Latest Products</h1>
-      {loading ? (
-        <Loader />
-      ) : error ? (
-        <Message variant="danger">{error}</Message>
-      ) : (
-        <>
-          <Row>
-            {products &&
-              products.length &&
-              products.map((product) => (
-                <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                  <Product product={product} />
-                </Col>
-              ))}
-          </Row>
-          <Paginate
-            pages={pages}
-            page={page}
-            keyword={keyword ? keyword : ""}
-          />
-        </>
-      )}
+      {
+        loading ? (
+          <Loader />
+        ) : error ? (
+          <Message variant="danger">{error}</Message>
+        ) : (
+          <>
+            <Row>
+              {products &&
+                products.length &&
+                products.map((product) => (
+                  <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                    <Product product={product} />
+                  </Col>
+                ))}
+            </Row>
+            <Paginate
+              pages={pages}
+              page={page}
+              keyword={keyword ? keyword : ""}
+            />
+            {/* <TopCate></TopCate> */}
+            {/* <Wrapper></Wrapper> */}
+
+          </>
+        )
+      }
+
     </>
   );
 };

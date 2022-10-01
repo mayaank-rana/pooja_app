@@ -13,10 +13,10 @@ const Header = () => {
   };
   return (
     <header>
-      <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
+      <Navbar bg="light" variant="light" expand="lg" collapseOnSelect fixed="top">
         <Container>
           <LinkContainer to="/">
-            <Navbar.Brand>Ecom</Navbar.Brand>
+            <Navbar.Brand >SensibleInsane</Navbar.Brand>
           </LinkContainer>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -59,6 +59,22 @@ const Header = () => {
               )}
             </Nav>
           </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <br /><br /><br /><br />
+      <Navbar bg="light" variant="light"  >
+
+        <Container>
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="justify-content-center">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/">Orignals</Nav.Link>
+              <Nav.Link href="/">Prints</Nav.Link>
+              <Nav.Link href="/commissions">Commissions</Nav.Link>
+              <Nav.Link href="/about">About</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+
         </Container>
       </Navbar>
     </header>

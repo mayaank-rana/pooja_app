@@ -1,8 +1,9 @@
 import React from "react";
+import './App.css'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
@@ -18,6 +19,9 @@ import UserEditScreen from "./screens/UserEditScreen";
 import ProductListScreen from "./screens/ProductListScreen";
 import ProductEditScreen from "./screens/ProductEditScreen";
 import OrderListScreen from "./screens/OrderListScreen";
+import AboutScreen from "./screens/AboutScreen";
+import { CommissionsScreen } from "./screens/CommissionsScreen";
+import Newsletter from './components/Newsletter'
 const App = () => {
   return (
     <Router>
@@ -39,6 +43,10 @@ const App = () => {
             <Route path="/product/:id" element={<ProductScreen />} />
             <Route path="/cart/" element={<CartScreen />} />
             <Route path="/cart/:id" element={<CartScreen />} />
+            <Route path="/about" element={<AboutScreen />} />
+            <Route path="/commissions" element={<CommissionsScreen />} />
+
+
             <Route
               path="/admin/productlist"
               element={<ProductListScreen />}
@@ -63,7 +71,8 @@ const App = () => {
           </Routes>
         </Container>
       </main>
-      <Footer />
+      <Newsletter></Newsletter>
+      <Footer></Footer>
     </Router>
   );
 };
