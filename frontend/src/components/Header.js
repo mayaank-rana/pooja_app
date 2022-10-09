@@ -68,8 +68,8 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="justify-content-center">
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/">Orignals</Nav.Link>
-              <Nav.Link href="/">Prints</Nav.Link>
+              <Nav.Link href="/search/Orignals">Orignals</Nav.Link>
+              <Nav.Link href="/search/Prints">Prints</Nav.Link>
               <Nav.Link href="/commissions">Commissions</Nav.Link>
               <Nav.Link href="/about">About</Nav.Link>
             </Nav>

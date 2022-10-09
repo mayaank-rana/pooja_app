@@ -70,7 +70,7 @@
 export const sliderItems = [
   {
     id: 1,
-    img: "https://i.postimg.cc/Jh9ZWJ7F/Whats-App-Image-2022-05-09-at-7-37-34-PM.jpg",
+    img: "https://i.postimg.cc/25qhJTYv/Whats-App-Image-2022-05-09-at-7-34-35-PM.jpg",
     title: "Portraits",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: "f5fafd",

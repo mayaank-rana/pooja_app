@@ -40,6 +40,7 @@ const Wrapper = styled.div`
   display: flex;
   transition: all 1.5s ease;
   transform: translateX(${(props) => props.slideIndex * -100}vw);
+
 `;
 
 const Slide = styled.div`
@@ -48,18 +49,25 @@ const Slide = styled.div`
   display: flex;
   align-items: center;
   background-color: #${(props) => props.bg};
+
+   @media (max-width: 768px) {
+    display:block;
+  }
+   
 `;
 
 const ImgContainer = styled.div`
   height: 100%;
-  
-  
+  margin-right:20px;
 `;
 
+
+
 const Image = styled.img`
-  margin:50px 50px;
-  height: 60%;
-  width:65%;
+  margin:20px 20px;
+  height: 80%;
+  width:80%;
+   
 `;
 
 const InfoContainer = styled.div`
@@ -81,8 +89,10 @@ const Desc = styled.p`
 const Button = styled.button`
   padding: 10px;
   font-size: 20px;
-  background-color: transparent;
+  background-color:;
   cursor: pointer;
+  border:1px;
+  border-radius:5px;
   border-color:black;
 `;
 
@@ -104,22 +114,21 @@ const Slider = () => {
       <Wrapper slideIndex={slideIndex}>
         {sliderItems.map((item) => (
           <Slide bg={item.bg} key={item.id}>
-            <Row>
-              <Col >
 
-                <ImgContainer>
-                  <Image src={item.img} />
-                </ImgContainer>
 
-              </Col>
-              {/* <Col class="w-100">
-                <InfoContainer>
-                  <Title>{item.title}</Title>
-                  <Desc>{item.desc}</Desc>
-                  <Button>SHOW NOW</Button>
-                </InfoContainer>
-              </Col> */}
-            </Row>
+            <ImgContainer>
+              <Image src={item.img} />
+            </ImgContainer>
+
+
+
+            <InfoContainer>
+              <Title>{item.title}</Title>
+              <Desc>{item.desc}</Desc>
+              <Button>SHOW NOW</Button>
+            </InfoContainer>
+
+
             {/* <ImgContainer>
               <Image src={item.img} />
             </ImgContainer>
@@ -137,5 +146,7 @@ const Slider = () => {
     </Container>
   );
 };
+
+
 
 export default Slider;

@@ -15,7 +15,8 @@ const Categories = () => {
                     <Image width="408" height="500" src={item.img} alt="img" />
 
                     <h3 style={{ align: 'center' }} >{item.title}</h3>
-                    <Button>SHOP NOW</Button>
+                    <Button style={{ margin: '10px' }}>SHOP NOW</Button>
+                    <br></br>
 
 
                     {/* <h1 style={textStyle}>Text over image</h1> */}

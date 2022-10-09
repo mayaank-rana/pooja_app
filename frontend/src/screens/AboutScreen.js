@@ -10,11 +10,11 @@ const AboutScreen = () => {
         // <Container class='mt-5 mb-5'>
         <Container>
             <>
-                <section class="">
+                {/* <section class="">
 
                     <img class="d-block w-100" src="https://i.postimg.cc/CLYC1jCT/Whats-App-Image-2022-05-09-at-7-34-32-PM-1.jpg" alt="Third slide" style={{ height: "auto" }} />
 
-                </section>
+                </section> */}
 
                 <section class="bg-light" id="about">
                     <div class="container">
